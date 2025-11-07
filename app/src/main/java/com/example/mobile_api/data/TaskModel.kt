@@ -1,7 +1,11 @@
 package com.example.mobile_api.data
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import com.squareup.moshi.JsonQualifier
 
+@Retention(AnnotationRetention.RUNTIME)
+@JsonQualifier
+annotation class HandleBooleanAsTitle
 @JsonClass(generateAdapter = true)
 data class TaskListResponse(
     // Tên "tasks" phải khớp với key trong JSON
@@ -34,7 +38,7 @@ data class TaskDetail(
 @JsonClass(generateAdapter = true)
 data class Subtask(
     @Json(name = "id") val id: Int,
-
+    @HandleBooleanAsTitle
     @Json(name = "title") val title: String?,
 
     @Json(name = "isCompleted") val isCompleted: Boolean

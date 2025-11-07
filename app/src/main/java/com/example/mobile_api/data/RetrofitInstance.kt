@@ -13,6 +13,7 @@ object RetrofitInstance {
     private const val BASE_URL = "https://amock.io/api/"
 
     private val moshi = Moshi.Builder()
+        .add(BooleanTitleAdapter())
         .add(KotlinJsonAdapterFactory())
         .build()
 
