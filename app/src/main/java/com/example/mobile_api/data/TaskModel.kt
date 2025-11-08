@@ -20,7 +20,9 @@ data class Task(
     @Json(name = "id") val id: Int,
     @Json(name = "title") val title: String,
     @Json(name = "status") val status: String,
-    @Json(name = "dueDate") val dueDate: String?
+    @Json(name = "dueDate") val dueDate: String?,
+    @Json(name = "description") val description: String?,
+    @Json(name = "category") val category: String?
 )
 
 @JsonClass(generateAdapter = true)
